@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>フォンスマート那覇店｜iPhone高価買取専門店</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="那覇市内全域対応のiPhone高価買取専門店フォンスマート那覇店。新品買取価格日本一を目指し、他店査定額を徹底対抗。事前LINE査定も可能で、その場で現金買取いたします。"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="site-logo">
+        <a href="#top">フォンスマート那覇店</a>
+      </div>
+      <nav class="site-nav">
+        <a href="#campaign">買取強化機種</a>
+        <a href="#price">買取価格表</a>
+        <a href="#flow">買取の流れ</a>
+        <a href="#reason">選ばれる理由</a>
+        <a href="#shop">店舗情報</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ファーストビュー -->
+    <section class="hero-section">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <p class="hero-label">那覇市内全域対応・iPhone専門</p>
+          <h1>
+            新品買取価格“日本一”を目指す<br />
+            iPhone高価買取専門店
+          </h1>
+          <p class="hero-lead">
+            フォンスマート那覇店は、<br />
+            iPhone専門ならではの査定精度で<br />
+            どこよりも高い買取を目指します。<br />
+            他店見積りがあれば徹底対抗。事前LINE査定もOKです。
+          </p>
+          <div class="hero-cta">
+            <a href="#price" class="btn-primary">iPhone買取価格を見る</a>
+            <a href="#shop" class="btn-secondary">店舗情報・アクセス</a>
+          </div>
+          <p class="hero-note">
+            ※「新品買取価格 日本一」は自社基準による目標表現です。<br />
+            ※査定だけのご来店・LINE相談も歓迎しています。
+          </p>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-placeholder">iPhone買取イメージ</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 買取強化機種 -->
+    <section id="campaign" class="section">
+      <div class="section-inner">
+        <h2>買取強化中のiPhone</h2>
+        <p class="section-lead">
+          以下の機種は特に高価買取強化中です。<br />
+          新品・未開封品は那覇市内トップクラスを目指します。
+        </p>
+        <div class="campaign-grid">
+          <article class="campaign-card">
+            <h3>iPhone 15 Pro 256GB</h3>
+            <p class="campaign-price">〜 135,000円</p>
+            <p class="campaign-note">新品・未開封・国内版</p>
+          </article>
+          <article class="campaign-card">
+            <h3>iPhone 15 128GB</h3>
+            <p class="campaign-price">〜 95,000円</p>
+            <p class="campaign-note">状態により変動します</p>
+          </article>
+          <article class="campaign-card">
+            <h3>iPhone SE（第3世代）64GB</h3>
+            <p class="campaign-price">〜 40,000円</p>
+            <p class="campaign-note">乗り換え後の端末歓迎</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 買取価格表 -->
+    <section id="price" class="section section-alt">
+      <div class="section-inner">
+        <h2>iPhone買取価格の目安</h2>
+        <p class="section-lead">
+          実際の買取金額は、状態・付属品・在庫状況により変動します。
+        </p>
+
+        <!-- 絞り込みUI -->
+        <div class="price-filter">
+          <div class="price-filter-row">
+            <label for="filter-keyword">
+              機種名・容量で絞り込み：
+            </label>
+            <input
+              type="text"
+              id="filter-keyword"
+              placeholder="例：15 / 14 / SE / 256 など"
+            />
+          </div>
+
+          <div class="price-filter-row">
+            <label for="filter-condition">状態で絞り込み：</label>
+            <select id="filter-condition">
+              <option value="">すべて</option>
+              <option value="新品未開封">新品未開封</option>
+              <option value="美品（Aランク）">美品（Aランク）</option>
+              <option value="中古（Bランク）">中古（Bランク）</option>
+            </select>
+
+            <button type="button" id="filter-reset" class="btn-reset">
+              条件をリセット
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrapper">
+         <table class="price-table">
+  <thead>
+    <tr>
+      <th>機種名</th>
+      <th>容量</th>
+      <th>状態</th>
+      <th>買取上限金額</th>
+    </tr>
+  </thead>
+  <tbody id="price-tbody">
+    <!-- JavaScriptで自動生成 -->
+  </tbody>
+</table>
+        </div>
+
+        <p class="section-note">
+          ※当店は iPhone専門買取 のため iPad / Apple Watch / Android は対象外です。<br />
+          ※他店査定票があれば最大限の金額対抗を行います。
+        </p>
+      </div>
+    </section>
+
+    <!-- 買取の流れ -->
+    <section id="flow" class="section">
+      <div class="section-inner">
+        <h2>買取の流れ</h2>
+        <ol class="flow-list">
+          <li>
+            <h3>1. 事前LINE査定 or ご来店</h3>
+            <p>
+              那覇市内全域のお客様から、事前LINE査定が利用可能。<br>
+              忙しい方はLINEでサクッと査定が便利です。
+            </p>
+          </li>
+          <li>
+            <h3>2. 店頭査定・金額提示</h3>
+            <p>
+              iPhone専門スタッフが状態を確認し、5〜10分で査定額をご提示。<br>
+              他店見積りがあれば徹底対抗いたします。
+            </p>
+          </li>
+          <li>
+            <h3>3. その場で現金お渡し</h3>
+            <p>
+              ご成約後、身分証確認と書類作成のうえ、即現金お渡しとなります。
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 選ばれる理由 -->
+    <section id="reason" class="section section-alt">
+      <div class="section-inner">
+        <h2>フォンスマート那覇店が選ばれる理由</h2>
+        <div class="reason-grid">
+          <article class="reason-card">
+            <h3>新品買取価格“日本一”を目指す</h3>
+            <p>常に最新の相場を調査し、限界まで高価買取に挑戦します。</p>
+          </article>
+
+          <article class="reason-card">
+            <h3>他店査定額を徹底対抗</h3>
+            <p>他店の査定票があれば必ず確認し、できる限りの上乗せを行います。</p>
+          </article>
+
+          <article class="reason-card">
+            <h3>事前LINE査定対応</h3>
+            <p>店舗へ行く前に、おおよその金額がわかる安心サービスです。</p>
+          </article>
+
+          <article class="reason-card">
+            <h3>iPhone専門だから査定が正確</h3>
+            <p>iPhoneに特化しているため、精度の高い査定が可能です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section class="section">
+      <div class="section-inner">
+        <h2>よくある質問</h2>
+        <ul class="faq-list">
+          <li>
+            <h3>Q. 分割払い中のiPhoneも売れますか？</h3>
+            <p>A. 原則可能です。ネットワーク制限の状況によって価格が変動します。</p>
+          </li>
+          <li>
+            <h3>Q. 画面割れでも買取できますか？</h3>
+            <p>A. 可能です。割れ具合に応じて減額となりますが、買取自体は可能です。</p>
+          </li>
+          <li>
+            <h3>Q. データはどうなりますか？</h3>
+            <p>A. 専用ツールでデータ完全消去（無料）を行います。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 店舗情報 -->
+    <section id="shop" class="section section-alt">
+      <div class="section-inner">
+        <h2>店舗情報・アクセス</h2>
+
+        <div class="shop-grid">
+          <div class="shop-info">
+            <dl class="shop-list">
+              <div class="shop-row">
+                <dt>店舗名</dt>
+                <dd>フォンスマート那覇店（架空店舗）</dd>
+              </div>
+
+              <div class="shop-row">
+                <dt>対応エリア</dt>
+                <dd>那覇市内全域</dd>
+              </div>
+
+              <div class="shop-row">
+                <dt>住所</dt>
+                <dd>沖縄県那覇市○○○0-0-0（サンプル）</dd>
+              </div>
+
+              <div class="shop-row">
+                <dt>営業時間</dt>
+                <dd>10:00〜19:00（年中無休）</dd>
+              </div>
+
+              <div class="shop-row">
+                <dt>電話番号</dt>
+                <dd>098-000-0000</dd>
+              </div>
+
+              <div class="shop-row">
+                <dt>LINE査定</dt>
+                <dd><a href="#!">LINEで事前査定（ダミー）</a></dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="shop-map">
+            <div class="shop-map-placeholder">地図イメージ</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <p>© 2025 フォンスマート那覇店（サンプルサイト）</p>
+  </footer>
+
+  <!-- ===============================
+       絞り込み用 JavaScript
+     =============================== -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1) データ定義：iPhone買取データを配列で持つ
+      const priceData = [
+        {
+          model: "iPhone 15 Pro",
+          capacity: "256GB",
+          condition: "新品未開封",
+          price: "〜 135,000円",
+        },
+        {
+          model: "iPhone 15",
+          capacity: "128GB",
+          condition: "新品未開封",
+          price: "〜 95,000円",
+        },
+        {
+          model: "iPhone 14",
+          capacity: "128GB",
+          condition: "美品（Aランク）",
+          price: "〜 75,000円",
+        },
+        {
+          model: "iPhone SE（第3世代）",
+          capacity: "64GB",
+          condition: "中古（Bランク）",
+          price: "〜 28,000円",
+        },
+      ];
+
+      const tbody = document.getElementById("price-tbody");
+      const keywordInput = document.getElementById("filter-keyword");
+      const conditionSelect = document.getElementById("filter-condition");
+      const resetButton = document.getElementById("filter-reset");
+
+      // 2) テーブル描画：渡された配列をもとにtbodyを作り直す
+      function renderTable(dataArray) {
+        // 一旦、中身を全部クリア
+        tbody.innerHTML = "";
+
+        if (dataArray.length === 0) {
+          // 該当なしメッセージ用の1行
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.colSpan = 4;
+          td.textContent = "条件に該当する端末がありません。条件を変えてお試しください。";
+          td.style.fontSize = "13px";
+          td.style.color = "#6b7280";
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+          return;
+        }
+
+        // データ分だけ行を追加
+        dataArray.forEach(function (item) {
+          const tr = document.createElement("tr");
+
+          const tdModel = document.createElement("td");
+          tdModel.textContent = item.model;
+
+          const tdCapacity = document.createElement("td");
+          tdCapacity.textContent = item.capacity;
+
+          const tdCondition = document.createElement("td");
+          tdCondition.textContent = item.condition;
+
+          const tdPrice = document.createElement("td");
+          tdPrice.textContent = item.price;
+
+          tr.appendChild(tdModel);
+          tr.appendChild(tdCapacity);
+          tr.appendChild(tdCondition);
+          tr.appendChild(tdPrice);
+
+          tbody.appendChild(tr);
+        });
+      }
+
+      // 3) 絞り込み処理：キーワード＋状態に基づいて配列をフィルタ
+      function applyFilter() {
+        const keyword = keywordInput.value.trim().toLowerCase();
+        const condition = conditionSelect.value; // 完全一致で判定
+
+        const filtered = priceData.filter(function (item) {
+          const modelText = (item.model + " " + item.capacity).toLowerCase();
+          const conditionText = item.condition;
+
+          const keywordMatch =
+            keyword === "" || modelText.includes(keyword);
+
+          const conditionMatch =
+            condition === "" || conditionText === condition;
+
+          return keywordMatch && conditionMatch;
+        });
+
+        renderTable(filtered);
+      }
+
+      // 4) イベント登録
+      keywordInput.addEventListener("input", applyFilter);
+      conditionSelect.addEventListener("change", applyFilter);
+
+      resetButton.addEventListener("click", function () {
+        keywordInput.value = "";
+        conditionSelect.value = "";
+        renderTable(priceData);
+      });
+
+      // 5) 初期表示
+      renderTable(priceData);
+    });
+  </script>
+</body>
+</html>
