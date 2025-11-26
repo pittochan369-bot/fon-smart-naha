@@ -123,16 +123,24 @@ main {
 }
 
 .site-nav a {
-  font-size: 13px;
+  font-size: 17px;
   color: #374151;
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
+  padding-bottom: 3px;
+  border-bottom: 3px solid transparent;
 }
 
 .site-nav a:hover {
   color: #16a34a;
   border-bottom-color: #16a34a;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .site-logo img {
+  height: 90px; /* 必要に応じて調整（例：60px など） */
+  width: auto;
+  display: block;
+ }
 }
 
 /* ハンバーガーメニューボタン（デフォルトは非表示。SPで表示） */
@@ -164,6 +172,14 @@ main {
 
 .nav-toggle.is-open span:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
+}
+
+.catchphrase {
+  color: #16a34a; /* 緑文字 */
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 6px;
+  display: inline-block;
 }
 
 /* =========================================================
