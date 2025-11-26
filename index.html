@@ -11,12 +11,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- ヘッダー -->
+    <!-- ヘッダー -->
   <header class="site-header">
     <div class="header-inner">
       <div class="site-logo">
         <a href="#top">フォンスマート那覇店</a>
       </div>
+
+      <!-- ★ ハンバーガーメニューボタンを追加 -->
+      <button class="nav-toggle" aria-label="メニューを開閉">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <nav class="site-nav">
         <a href="#campaign">買取強化機種</a>
         <a href="#price">買取価格表</a>
@@ -279,7 +287,7 @@
   <!-- ===============================
        絞り込み用 JavaScript
      =============================== -->
-    <script>
+      <script>
     document.addEventListener("DOMContentLoaded", function () {
       // 1) データ定義：iPhone買取データを配列で持つ
       const priceData = [
@@ -314,17 +322,38 @@
       const conditionSelect = document.getElementById("filter-condition");
       const resetButton = document.getElementById("filter-reset");
 
-      // 2) テーブル描画：渡された配列をもとにtbodyを作り直す
+      // 2) ハンバーガーメニュー（SPナビ）の制御
+      const navToggle = document.querySelector(".nav-toggle");
+      const siteNav = document.querySelector(".site-nav");
+
+      if (navToggle && siteNav) {
+        // ボタンクリックでメニュー開閉
+        navToggle.addEventListener("click", function () {
+          siteNav.classList.toggle("is-open");
+          navToggle.classList.toggle("is-open");
+        });
+
+        // メニュー内リンクを押したら閉じる
+        siteNav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            siteNav.classList.remove("is-open");
+            navToggle.classList.remove("is-open");
+          });
+        });
+      }
+
+      // 3) テーブル描画：渡された配列をもとに tbody を作り直す
       function renderTable(dataArray) {
-        // 一旦、中身を全部クリア
+        // 一旦クリア
         tbody.innerHTML = "";
 
         if (dataArray.length === 0) {
-          // 該当なしメッセージ用の1行
+          // 該当なしメッセージ行
           const tr = document.createElement("tr");
           const td = document.createElement("td");
           td.colSpan = 4;
-          td.textContent = "条件に該当する端末がありません。条件を変えてお試しください。";
+          td.textContent =
+            "条件に該当する端末がありません。条件を変えてお試しください。";
           td.style.fontSize = "13px";
           td.style.color = "#6b7280";
           tr.appendChild(td);
@@ -357,7 +386,7 @@
         });
       }
 
-      // 3) 絞り込み処理：キーワード＋状態に基づいて配列をフィルタ
+      // 4) 絞り込み処理：キーワード＋状態に基づいて配列をフィルタ
       function applyFilter() {
         const keyword = keywordInput.value.trim().toLowerCase();
         const condition = conditionSelect.value; // 完全一致で判定
@@ -378,7 +407,7 @@
         renderTable(filtered);
       }
 
-      // 4) イベント登録
+      // 5) イベント登録（フィルタUI）
       keywordInput.addEventListener("input", applyFilter);
       conditionSelect.addEventListener("change", applyFilter);
 
@@ -388,7 +417,7 @@
         renderTable(priceData);
       });
 
-      // 5) 初期表示
+      // 6) 初期表示
       renderTable(priceData);
     });
   </script>

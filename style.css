@@ -97,7 +97,7 @@ main {
   border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .header-inner {
@@ -115,8 +115,10 @@ main {
   color: #14532d;
 }
 
+/* PC時のナビ（横並び） */
 .site-nav {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
@@ -131,6 +133,37 @@ main {
   color: #16a34a;
   border-bottom-color: #16a34a;
   text-decoration: none;
+}
+
+/* ハンバーガーメニューボタン（デフォルトは非表示。SPで表示） */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 4px 0;
+  background-color: #14532d;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* 開いている時のアニメーション（×印っぽく） */
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* =========================================================
@@ -567,19 +600,49 @@ main {
 
 @media (max-width: 768px) {
   .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
   }
 
+  /* スマホ時だけハンバーガー表示 */
+  .nav-toggle {
+    display: block;
+  }
+
+  /* スマホ時のナビはドロップダウン表示 */
   .site-nav {
-    flex-wrap: wrap;
+    position: absolute;
+    top: 48px; /* ヘッダー直下あたり */
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: none;
+    flex-direction: column;
+    padding: 8px 16px 12px;
     gap: 8px;
+  }
+
+  .site-nav a {
+    font-size: 14px;
+    padding: 4px 0;
+    border-bottom: none;
+  }
+
+  /* .is-open が付いた時だけ表示 */
+  .site-nav.is-open {
+    display: flex;
   }
 
   .hero-inner {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 8px;
   }
 
   .hero-image {
